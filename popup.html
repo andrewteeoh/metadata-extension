@@ -7,40 +7,34 @@
 <html>
   <head>
     <title>Getting Started Extension's Popup</title>
-
     <!--
       - JavaScript and HTML must be in separate files: see our Content Security
       - Policy documentation[1] for details and explanation.
       -
       - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
      -->
+    <link rel="stylesheet" type="text/css" href="main.css">
     <script src="popup.js"></script>
-    <style>
-      html {
-        font-size: 16px;
-        font-family: Helvetica;
-      }
-      #metadata-container {
-        width: 400px;
-      }
-      .header {
-        font-size: 1.5rem;
-      }
-      #og-image--primary {
-        width: 100%;
-      }
-      #og-title {
-        font-size: 1.25rem;
-      }
-    </style>
   </head>
   <body>
     <div id="metadata-container">
+
       <div class="header">Page Metadata for</div>
       <div id="page-title" title="title"></div>
-      <img id="og-image--primary" title="og:image" />
-      <div id="og-title" title="og:title"></div>
-      <div id="og-description" title="og:description"></div>
+
+      <div id="facebook-share-container" class="share-container clearfix">
+
+        <div class="image-container">
+          <img id="og-image--primary" class="share-container__image" title="og:image" />
+        </div>
+
+        <div class="share-container__details">
+          <div id="og-title" class="share-container__title" title="og:title"></div>
+          <div id="og-description" title="og:description"></div>
+        </div>
+
+      </div>
+
     </div>
   </body>
 </html>

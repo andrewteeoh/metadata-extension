@@ -1,0 +1,45 @@
+
+html {
+	font-size: 16px;
+	font-family: Helvetica;
+}
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+
+#metadata-container {
+	width: 400px;
+}
+.header {
+	font-size: 1.5rem;
+}
+.image-container {
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+}
+.large .image-container {
+	padding-bottom: 52.5%;
+}
+.small .image-container {
+	width: 40%;
+	float: left;
+}
+.share-container__image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+.small .share-description {
+	width: 60%;
+	float: left;
+}
+#og-title {
+	font-size: 1.25rem;
+}
