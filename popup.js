@@ -7,10 +7,23 @@ function fillData(obj) {
   if (obj["og:image"]) {
     var ogImage = document.getElementById("og-image--primary");
     ogImage.src = obj["og:image"];
+    ogImage.onload = function(){
+      document.getElementById("facebook-share-container").className += " " + imageSizeCheck(ogImage.naturalWidth, ogImage.naturalHeight);
+    };
+
   }
   if (obj["og:description"]) {
     document.getElementById("og-description").textContent = obj["og:description"];
   }
+}
+
+function imageSizeCheck(width, height) {
+  if (width >= 600 && height >= 315) {
+    return "large";
+  } else if (width < 200 || height < 200) {
+    return "error";
+  }
+  return "small";
 }
 
 document.addEventListener("DOMContentLoaded", function(){
