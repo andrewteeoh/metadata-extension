@@ -6,11 +6,15 @@ function fillData(obj) {
   }
   if (obj["og:image"]) {
     var ogImage = document.getElementById("og-image--primary");
-    ogImage.src = obj["og:image"];
+    ogImage.src = obj["og:image"].shift();
     ogImage.onload = function(){
       document.getElementById("facebook-share-container").className += " " + imageSizeCheck(ogImage.naturalWidth, ogImage.naturalHeight);
     };
-
+    obj["og:image"].forEach(function(image, index){
+      var backupOgImage = document.createElement('img');
+      backupOgImage.src = image;
+      document.getElementById("backup-images").appendChild(backupOgImage);
+    });
   }
   if (obj["og:description"]) {
     document.getElementById("og-description").textContent = obj["og:description"];

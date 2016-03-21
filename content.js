@@ -8,9 +8,12 @@ chrome.runtime.onMessage.addListener(
       for (var i=0; i< metatags.length; i++) {
         var property = metatags[i].getAttribute('property');
         if (property) {
-          if (!metaObj[property]) {
+          if (property == "og:image") {
+            metaObj[property] = metaObj[property] || []
+            metaObj[property].push([metatags[i].getAttribute('content')]);
+          }
+          else {
             metaObj[property] = metatags[i].getAttribute('content');
-            console.log(property + ": " + metatags[i].getAttribute('content'));
           }
         }
       }

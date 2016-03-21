@@ -26,20 +26,27 @@ html {
 .large .image-container {
 	padding-bottom: 52.5%;
 }
+.share-container__image {
+	width: 100%;
+}
+.large .share-container__image {
+	position: absolute;
+	top: -45%;
+	left: 0;
+}
 .small .image-container {
 	width: 40%;
 	float: left;
 }
-.share-container__image {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-}
+
 .small .share-description {
 	width: 60%;
 	float: left;
 }
 #og-title {
 	font-size: 1.25rem;
+}
+#backup-images img {
+	width: 30%;
+	display: inline-block;
 }
