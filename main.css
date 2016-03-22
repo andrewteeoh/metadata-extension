@@ -51,7 +51,9 @@ html {
 	font-size: 16px;
 	font-family: Helvetica;
 }
-
+body {
+	font-size: 0.75rem;
+}
 .clearfix:after {
 	visibility: hidden;
 	display: block;
@@ -65,10 +67,31 @@ html {
 	width: 400px;
 }
 .header {
-	font-size: 0.75rem;
 	line-height: 1.5rem;
 	background-color: #999;
 	margin-bottom: 0.5rem;
+}
+.warning {
+	background-color: #cc3344;
+	display: none;
+}
+.warning.show {
+	display: block;
+}
+.url-table {
+	display: table;
+}
+.url-table__row {
+	display: table-row;
+}
+.url-table__cell {
+	display: table-cell;
+}
+.url-table__heading {
+	font-weight: 700;
+}
+.share-container {
+	margin: 0.5rem 0;
 }
 .image-container {
 	width: 100%;

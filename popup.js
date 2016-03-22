@@ -4,6 +4,15 @@ function fillData(obj) {
   if (obj["og:title"]) {
     document.getElementById("og-title").textContent = obj["og:title"];
   }
+  if (obj["og:url"]) {
+    document.getElementById("og-url").textContent = obj["og:url"];
+  }
+  if (obj["canonical"]) {
+    document.getElementById("canonical-url").textContent = obj["canonical"]
+  }
+  if (obj["og:url"] && obj["canonical"] && obj["og:url"] != obj["canonical"]) {
+    document.getElementById("canonical-warning").className += " show";
+  }
   if (obj["og:image"]) {
     var ogImage = document.getElementById("og-image--primary");
     ogImage.src = obj["og:image"].shift();
