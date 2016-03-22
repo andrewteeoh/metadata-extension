@@ -19,6 +19,9 @@ function fillData(obj) {
     ogImage.onload = function(){
       document.getElementById("facebook-share-container").className += " " + imageSizeCheck(ogImage.naturalWidth, ogImage.naturalHeight);
     };
+    if (obj["og:image"].length > 0) {
+      document.querySelector("#backup-images .header").className += " show";
+    }
     obj["og:image"].forEach(function(image, index){
       var backupOgImage = document.createElement('img');
       backupOgImage.src = image;

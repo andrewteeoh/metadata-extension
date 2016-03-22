@@ -123,6 +123,12 @@ body {
 	font-size: 1.25rem;
 	margin-bottom: 0.5rem;
 }
+#backup-images .header {
+	display: none;
+}
+#backup-images .header.show {
+	display: block;
+}
 #backup-images img {
 	width: 30%;
 	display: inline-block;
