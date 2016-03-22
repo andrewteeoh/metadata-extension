@@ -67,13 +67,15 @@ body {
 	width: 400px;
 }
 .header {
-	line-height: 1.5rem;
+	line-height: 1rem;
+	padding: 3px;
 	background-color: #999;
 	margin-bottom: 0.5rem;
 }
 .warning {
 	background-color: #cc3344;
 	display: none;
+	padding: 3px;
 }
 .warning.show {
 	display: block;
@@ -130,6 +132,7 @@ body {
 	display: block;
 }
 #backup-images img {
-	width: 30%;
+	width: 20%;
+	margin-right: 2%;
 	display: inline-block;
 }
