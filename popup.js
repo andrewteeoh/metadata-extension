@@ -15,10 +15,13 @@ function fillData(obj) {
   }
   if (obj["og:image"]) {
     var ogImage = document.getElementById("og-image--primary");
+    var ogImageOverlay = document.getElementById("og-image--overlay");
     ogImage.src = obj["og:image"].shift();
     ogImage.onload = function(){
       document.getElementById("facebook-share-container").className += " " + imageSizeCheck(ogImage.naturalWidth, ogImage.naturalHeight);
     };
+    ogImageOverlay.style.backgroundImage = "url('" + ogImage.src + "')";
+
     if (obj["og:image"].length > 0) {
       document.querySelector("#backup-images .header").className += " show";
     }
