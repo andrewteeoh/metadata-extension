@@ -109,7 +109,7 @@ body {
 }
 .large .share-container__image {
 	position: absolute;
-	top: -45%;
+	top: 0;
 	left: 0;
 }
 .small .image-container {
