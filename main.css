@@ -62,7 +62,9 @@ body {
 	clear: both;
 	height: 0;
 }
-
+#page-title {
+	text-decoration: underline;
+}
 #metadata-container {
 	width: 400px;
 }
@@ -91,6 +93,12 @@ body {
 }
 .url-table__heading {
 	font-weight: 700;
+}
+.facebook-header {
+	background-color: #3b5998;
+	color: #fff;
+	margin: 0.5rem 0 0 0;
+	padding: 3px;
 }
 .share-container {
 	margin: 0.5rem 0;
