@@ -62,6 +62,15 @@ function imageSizeCheck(width, height) {
   return "small";
 }
 
+function addListeners() {
+  document.getElementById("toggle-view").addEventListener("mousedown", function(){
+    document.getElementById("metadata-social").classList.toggle('show');
+    document.getElementById("metadata-social").classList.toggle('hide');
+    document.getElementById("metadata-raw").classList.toggle('show');
+    document.getElementById("metadata-raw").classList.toggle('hide');
+  });
+}
+
 document.addEventListener("DOMContentLoaded", function(){
   // Send event to content.js
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
@@ -69,6 +78,8 @@ document.addEventListener("DOMContentLoaded", function(){
     chrome.tabs.sendMessage(activeTab.id, {"message": "clicked_browser_action"});
   });
 });
+
+
 
 chrome.browserAction.onClicked.addListener(function(tab) {
   // Send a message to the active tab
@@ -84,6 +95,7 @@ chrome.runtime.onMessage.addListener(
     if( request.message === "show_metadata" ) {
       fillData(request["metadata"]);
       fillRawDataTable(request["metadata"]);
+      addListeners();
     }
   }
 );

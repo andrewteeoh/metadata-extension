@@ -13,39 +13,42 @@
         <span id="page-title" title="title"></span>
       </div>
 
-      <div id="canonical-warning" class="warning">Warning! You have an open graph url that does not match the specified canonical url</div>
-      <div class="url-table">
-        <div class="url-table__row">
-          <div class="url-table__cell url-table__heading">og:url</div>
-          <div id="og-url" class="url-table__cell" title="og:url"></div>
+      <div id="toggle-view">Raw Data</div>
+      <div id="metadata-social" class="show">
+        <div id="canonical-warning" class="warning">Warning! You have an open graph url that does not match the specified canonical url</div>
+        <div class="url-table">
+          <div class="url-table__row">
+            <div class="url-table__cell url-table__heading">og:url</div>
+            <div id="og-url" class="url-table__cell" title="og:url"></div>
+          </div>
+          <div class="url-table__row">
+            <div class="url-table__cell url-table__heading">canonical</div>
+            <div id="canonical-url" class="url-table__cell" title="canonical"></div>
+          </div>
         </div>
-        <div class="url-table__row">
-          <div class="url-table__cell url-table__heading">canonical</div>
-          <div id="canonical-url" class="url-table__cell" title="canonical"></div>
+
+        <div class="facebook-header">Facebook sharing (estimate)</div>
+        <div id="facebook-share-container" class="share-container clearfix">
+
+          <div class="image-container">
+            <div id="og-image--overlay"></div>
+            <img id="og-image--primary" class="share-container__image" title="og:image" />
+          </div>
+
+          <div class="share-container__details">
+            <div id="og-title" class="share-container__title" title="og:title"></div>
+            <div id="og-description" title="og:description"></div>
+          </div>
+
+        </div>
+
+        <div id="backup-images">
+          <p class="header">Other Open Graph Images</p>
         </div>
       </div>
 
-      <div class="facebook-header">Facebook sharing (estimate)</div>
-      <div id="facebook-share-container" class="share-container clearfix">
 
-        <div class="image-container">
-          <div id="og-image--overlay"></div>
-          <img id="og-image--primary" class="share-container__image" title="og:image" />
-        </div>
-
-        <div class="share-container__details">
-          <div id="og-title" class="share-container__title" title="og:title"></div>
-          <div id="og-description" title="og:description"></div>
-        </div>
-
-      </div>
-
-      <div id="backup-images">
-        <p class="header">Other Open Graph Images</p>
-      </div>
-
-
-      <table id="metadata-raw">
+      <table id="metadata-raw" class="hide">
       </table>
     </div>
   </body>

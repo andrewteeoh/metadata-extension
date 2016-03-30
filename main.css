@@ -79,9 +79,6 @@ body {
 	display: none;
 	padding: 3px;
 }
-.warning.show {
-	display: block;
-}
 .url-table {
 	display: table;
 }
@@ -161,4 +158,13 @@ body {
 
 #metadata-raw .tag-name {
 	font-weight: bold;
+}
+.meta-tag td {
+	padding: 3px;
+}
+.show {
+	display: block;
+}
+.hide {
+	display: none;
 }
