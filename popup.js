@@ -16,7 +16,7 @@ function fillData(obj) {
   if (obj["og:image"]) {
     var ogImage = document.getElementById("og-image--primary");
     var ogImageOverlay = document.getElementById("og-image--overlay");
-    ogImage.src = obj["og:image"].shift();
+    ogImage.src = obj["og:image"][0];
     ogImage.onload = function(){
       document.getElementById("facebook-share-container").className += " " + imageSizeCheck(ogImage.naturalWidth, ogImage.naturalHeight);
     };
@@ -26,13 +26,30 @@ function fillData(obj) {
       document.querySelector("#backup-images .header").className += " show";
     }
     obj["og:image"].forEach(function(image, index){
-      var backupOgImage = document.createElement('img');
-      backupOgImage.src = image;
-      document.getElementById("backup-images").appendChild(backupOgImage);
+      if (index > 0) {
+        var backupOgImage = document.createElement('img');
+        backupOgImage.src = image;
+        document.getElementById("backup-images").appendChild(backupOgImage);
+      }
     });
   }
   if (obj["og:description"]) {
     document.getElementById("og-description").textContent = obj["og:description"];
+  }
+}
+
+function fillRawDataTable(metadata) {
+  var metadataTable = document.getElementById("metadata-raw");
+  for (var key in metadata) {
+    if (metadata.hasOwnProperty(key)) {
+      if (Array.isArray(metadata[key])) {
+        metadata[key].forEach(function(value, index){
+          metadataTable.innerHTML += '<tr class="meta-tag"><td class="tag-name">' + (index == 0 ? key : '') + '</td><td class="tag-value">' +   metadata[key][index] + '</td></tr>';
+        });
+      } else {
+        metadataTable.innerHTML += '<tr class="meta-tag"><td class="tag-name">' + key + '</td><td class="tag-value">' + metadata[key] + '</td></tr>';
+      }
+    }
   }
 }
 
@@ -66,6 +83,7 @@ chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
     if( request.message === "show_metadata" ) {
       fillData(request["metadata"]);
+      fillRawDataTable(request["metadata"]);
     }
   }
 );
