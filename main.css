@@ -162,6 +162,12 @@ body {
 .meta-tag td {
 	padding: 3px;
 }
+#toggle-view {
+	text-align : right;
+	font-weight: bold;
+	text-decoration: underline;
+	padding: 3px;
+}
 .show {
 	display: block;
 }

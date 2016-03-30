@@ -63,11 +63,18 @@ function imageSizeCheck(width, height) {
 }
 
 function addListeners() {
-  document.getElementById("toggle-view").addEventListener("mousedown", function(){
-    document.getElementById("metadata-social").classList.toggle('show');
-    document.getElementById("metadata-social").classList.toggle('hide');
-    document.getElementById("metadata-raw").classList.toggle('show');
-    document.getElementById("metadata-raw").classList.toggle('hide');
+  document.getElementById("social-tab").addEventListener("mousedown", function(){
+    document.getElementById("metadata-social").className = "show";
+    document.getElementById("metadata-raw").className = "hide";
+    this.className = "hide";
+    document.getElementById("raw-tab").className = "show";
+  });
+
+  document.getElementById("raw-tab").addEventListener("mousedown", function(){
+    document.getElementById("metadata-social").className = "hide";
+    document.getElementById("metadata-raw").className = "show";
+    this.className = "hide";
+    document.getElementById("social-tab").className = "show";
   });
 }
 
