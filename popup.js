@@ -39,7 +39,7 @@ function fillData(obj) {
 }
 
 function fillRawDataTable(metadata) {
-  var metadataTable = document.getElementById("metadata-raw");
+  var metadataTable = document.getElementById("metadata-table");
   for (var key in metadata) {
     if (metadata.hasOwnProperty(key)) {
       if (Array.isArray(metadata[key])) {
