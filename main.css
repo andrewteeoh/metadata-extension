@@ -178,15 +178,21 @@ body {
 .meta-tag td {
 	padding: 3px;
 }
+.show {
+	display: block;
+}
+.hide {
+	display: none;
+}
 #toggle-view {
 	text-align : right;
 	font-weight: bold;
 	text-decoration: underline;
 	padding: 3px;
 }
-.show {
-	display: block;
+#raw-tab.show, #social-tab.show {
+	display: inline;
 }
-.hide {
-	display: none;
+#raw-tab:hover, #social-tab:hover {
+	cursor: pointer;
 }
